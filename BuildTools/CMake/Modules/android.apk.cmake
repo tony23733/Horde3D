@@ -77,7 +77,7 @@ macro(android_create_apk name apk_package_name apk_directory libs_directory andr
     set( GRADLE_BIN ${apk_directory}/gradlew.bat)
     set( ZIPALIGN_BIN ${ANDROID_SDK_BUILD_TOOLS_PATH}/zipalign.exe )
     set( APKSIGNER_BIN ${ANDROID_SDK_BUILD_TOOLS_PATH}/apksigner.bat )
-  elseif( ${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" )
+  elseif( ${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_HOST_SYSTEM_NAME} MATCHES "Darwin" )
     set( GRADLE_BIN ${apk_directory}/gradlew)
     set( ZIPALIGN_BIN ${ANDROID_SDK_BUILD_TOOLS_PATH}/zipalign )
     set( APKSIGNER_BIN ${ANDROID_SDK_BUILD_TOOLS_PATH}/apksigner )
